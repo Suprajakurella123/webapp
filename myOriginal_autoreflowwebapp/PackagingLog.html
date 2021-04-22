@@ -1,0 +1,69 @@
+<html>  
+<head>
+    <style>     
+        html{     
+        background-color: white;     
+        padding: 5px;     
+        width: 95%;     
+        }     
+        pre {     
+        overflow-x: auto;     
+        white-space: pre-wrap;     
+        white-space: -moz-pre-wrap;     
+        white-space: -pre-wrap;     
+        white-space: -o-pre-wrap;     
+        word-wrap: break-word;     
+        }     
+    </style>     
+    
+    <script type="text/javascript">     
+            
+            function setup(htmlComponent) {     
+            
+				htmlComponent.addEventListener("DataChanged", function(event) {     
+				scrollID =  htmlComponent.Data;     
+					if (scrollID != ''){
+						if(scrollID==="bottom"){         
+							scrollToBottom();     
+						} else if(scrollID==="DOWNLOAD_MCRINSTALLER" || scrollID==="BUILD_MISSING" || scrollID==="SAMPLE_GEN" || scrollID==="USER_REQUESTED_PACKAGE"){     
+							document.getElementById(scrollID).scrollIntoView(true);     
+						} else {     
+							//document.body.innerHTML = document.body.innerHTML + scrollID;     
+							document.body.appendChild(scrollID);                 
+							scrollToBottom();     
+						}    
+						htmlComponent.Data = '';
+					}		
+				});          
+            }     
+            function scrollToBottom(){     
+            var scrollingElement = (document.scrollingElement || document.body);     
+            scrollingElement.scrollTop = scrollingElement.scrollHeight;     
+            }     
+            
+    </script> 
+</head>
+ <body><meta charset="UTF-8">        
+ <pre><font color=blue>mcc -W 'webapp:myOriginal_autoreflowwebapp,CONFIG:C:\Users\theam\AppData\Local\Temp\tp2b8b9e70_bdcf_4280_ae3a_fa8b59950759.xml' -d 'C:\Users\theam\Desktop\cpp folders\myOriginal_autoreflowwebapp' -v -C 'C:\Users\theam\Desktop\veda source code\VEDA v1\Original_autoreflow.mlapp'</font>
+Compiler version: 8.2 (R2021a)
+Analyzing file dependencies. 
+[Warning: Web apps that generate additional windows or apps are currently not supported.
+Check the following .mlapp files for window and app dependencies:
+C:\Users\theam\Desktop\veda source code\VEDA v1\Original_autoreflow.mlapp
+C:\Users\theam\Desktop\veda source code\VEDA v1\app10_autoreflow.mlapp
+C:\Users\theam\Desktop\veda source code\VEDA v1\app11_autoreflow.mlapp
+C:\Users\theam\Desktop\veda source code\VEDA v1\app12_autoreflow.mlapp
+C:\Users\theam\Desktop\veda source code\VEDA v1\app2_autoreflow.mlapp
+C:\Users\theam\Desktop\veda source code\VEDA v1\app3_autoreflow.mlapp
+C:\Users\theam\Desktop\veda source code\VEDA v1\app4_autoreflow.mlapp
+C:\Users\theam\Desktop\veda source code\VEDA v1\app5_autoreflow.mlapp
+C:\Users\theam\Desktop\veda source code\VEDA v1\app6_autoreflow.mlapp
+C:\Users\theam\Desktop\veda source code\VEDA v1\app7_autoreflow.mlapp
+C:\Users\theam\Desktop\veda source code\VEDA v1\app9_autoreflow.mlapp] 
+[Warning: Any function in your web app that generates additional window is currently not
+supported. Check the following function(s) that generates additional window:
+errordlg,inputdlg,uigetdir] 
+Parsing file "C:\Users\theam\Desktop\veda source code\VEDA v1\Original_autoreflow.mlapp" 
+	(referenced from command line). 
+
+</pre></body></html>
